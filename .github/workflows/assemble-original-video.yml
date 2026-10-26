@@ -1,0 +1,44 @@
+name: Assemble original MathGraph demo
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.video-original-b64/**'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Reconstruct and verify original uploaded MP4
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import base64, hashlib
+          from pathlib import Path
+          parts = sorted(Path(".video-original-b64").glob("part-*.txt"))
+          assert len(parts) == 17, f"Expected 17 original-byte chunks, got {len(parts)}"
+          encoded = b"".join(p.read_bytes().strip() for p in parts)
+          assert len(encoded) == 16560244, f"Encoded length mismatch: {len(encoded)}"
+          video = base64.b64decode(encoded, validate=True)
+          assert len(video) == 12420182, f"Original file size mismatch: {len(video)}"
+          digest = hashlib.sha256(video).hexdigest()
+          expected = "8d9648f9d1e1cbf9008e93239edf9da9ca77f4ac6c0072908a5a1873f24a30d0"
+          assert digest == expected, f"Original file SHA-256 mismatch: {digest}"
+          Path("mathgraph-demo.mp4").write_bytes(video)
+          print(f"Original MP4 reconstructed byte-for-byte: {len(video)} bytes SHA256 {digest}")
+          PY
+      - name: Commit original video and discard transfer chunks
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add mathgraph-demo.mp4
+          git rm -qr .video-original-b64
+          git commit -m "Host original unmodified MathGraph demonstration MP4"
+          git push origin HEAD:main
