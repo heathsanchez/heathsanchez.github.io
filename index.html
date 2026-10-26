@@ -147,7 +147,7 @@
     .film-section .section-label:before {background:var(--acid);}
     .film-plate {border:1px solid #455562;border-radius:21px;padding:36px;display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center;background:radial-gradient(ellipse at top right,#334751 0%,#111b24 65%);}
     .video-embed { position:relative; aspect-ratio:16 / 9; width:100%; border:1px solid #5b6c72; border-radius:12px; overflow:hidden; background:#071017; box-shadow:0 14px 34px rgba(0,0,0,.18); }
-    .video-embed iframe { position:absolute; inset:0; width:100%; height:100%; border:0; display:block; }
+    .video-embed video { position:absolute; inset:0; width:100%; height:100%; display:block; object-fit:contain; background:#080d11; }
     .film-content .duration {color:var(--acid);font-size:12px;font-weight:840;letter-spacing:.14em;text-transform:uppercase;}
     .film-content h3{font:800 clamp(28px,3.3vw,46px)/1.07 var(--display);letter-spacing:-.065em;margin:15px 0;}
     .film-content p{color:#bbcad0;font-size:15px;margin-bottom:27px;}
@@ -365,19 +365,20 @@
     <p class="section-intro">This is an existing recorded product demonstration of MathGraph's Warranted Release Agent. It's not a personal introduction video; it shows the style of evidence-driven work I do.</p>
     <div class="film-plate">
       <div class="video-embed" id="video-player">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/1NgpOCCalIs?playsinline=1&amp;rel=0"
-          title="MathGraph Warranted Release Agent — 2-minute 59-second recorded demonstration"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen></iframe>
+        <video
+          controls
+          playsinline
+          preload="metadata"
+          aria-label="MathGraph Warranted Release Agent — original 2-minute 59-second recorded demonstration">
+          <source src="mathgraph-demo.mp4?v=original-20261027" type="video/mp4">
+          Your browser does not support HTML5 video playback.
+        </video>
       </div>
       <div class="film-content">
         <span class="duration">02:59 · Product demonstration</span>
         <h3>Make the decision as inspectable as the result.</h3>
         <p>Watch how a release decision is tied to actual evidence, source identity, and the limits of what has been tested.</p>
-        <p class="film-notice">Press play in the player beside this text. The video plays here, without opening another site.</p>
+        <p class="film-notice">Press play here to watch the original demonstration, hosted on this site. No YouTube player or channel overlay.</p>
         <p class="film-notice">The recording describes a specific project and its scoped tests; it is not a blanket proof of correctness.</p>
       </div>
     </div>
