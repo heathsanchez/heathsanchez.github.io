@@ -10,6 +10,11 @@ Minimal, responsive, static portfolio, with independent primary-evidence links. 
 - [Linux rvgen V2 maintainer reply](https://lists.openwall.net/linux-kernel/2026/10/16/793): accepted by maintainer; no merged claim.
 - [Equational Theories PR #1461](https://github.com/teorth/equational_theories/pull/1461): merged upstream.
 
+## Branding
+- Local `tux.svg` reproduces Garrett LeSage's CC0 redraw of Larry Ewing's Tux mascot, from https://github.com/garrett/Tux (credit to Larry Ewing, Garrett LeSage, and IFo Hancroft). This is community Linux imagery, not Linux Foundation or kernel maintainer endorsement.
+- The headshot is supplied by Heath and embedded in `index.html`.
+- SAIR organizers are named as stated by the official competition, without implying an endorsement.
+
 ## Publishing
 The repository is named `heathsanchez.github.io`. To enable publication, visit **Settings → Pages → Build and deployment** and choose **Deploy from a branch**, `main`, `/ (root)`. Wait for the Pages deployment, then check https://heathsanchez.github.io.
 
