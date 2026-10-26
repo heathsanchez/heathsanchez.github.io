@@ -12,13 +12,20 @@ Minimal, responsive, static portfolio, with independent primary-evidence links. 
 
 ## Branding
 - Local `tux.svg` reproduces Garrett LeSage's CC0 redraw of Larry Ewing's Tux mascot, from https://github.com/garrett/Tux (credit to Larry Ewing, Garrett LeSage, and IFo Hancroft). This is community Linux imagery, not Linux Foundation or kernel maintainer endorsement.
-- The headshot is supplied by Heath and embedded in `index.html`.
+- Heath's supplied headshot is embedded in `favicon.svg`, reused as the small top-left logo and browser-tab icon. There is no large homepage portrait.
 - SAIR organizers are named as stated by the official competition, without implying an endorsement.
 
 ## Publishing
 The repository is named `heathsanchez.github.io`. To enable publication, visit **Settings → Pages → Build and deployment** and choose **Deploy from a branch**, `main`, `/ (root)`. Wait for the Pages deployment, then check https://heathsanchez.github.io.
 
-## Editing
-Edit `index.html` directly. GitHub organization/repository-owner avatars are hotlinked for visual source identity, not endorsements. The leaderboard screenshots are intentionally not embedded. The 2:59 video is a product demonstration, not a personal introduction.
+## Editing text without writing code
+1. Open https://github.com/heathsanchez/heathsanchez.github.io/edit/main/index.html (GitHub sign-in required).
+2. Use Find to locate a sentence you recognize, then edit the visible wording between the HTML tags. Leave the tags (`<h1>`, `<p>`, `<span>`, and so on) in place.
+3. Click **Commit changes** and save directly to `main`.
+4. Refresh https://heathsanchez.github.io after GitHub Pages has deployed the new commit.
+
+**Simplest alternative:** Tell ChatGPT the exact sentence to replace and the new wording; it can edit the linked repository.
+
+GitHub organization/repository-owner avatars are hotlinked for visual source identity, not endorsements. The leaderboard screenshots are intentionally not embedded. The 2:59 video is a product demonstration, not a personal introduction.
 
 The historical commercial results are attributed to Heath's published account and not represented as independently audited. No affiliation or institutional endorsement is implied by open-source contributions.
