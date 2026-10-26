@@ -146,11 +146,8 @@
     .film-section .section-label,.film-section .section-intro {color:#b8c4c9;}
     .film-section .section-label:before {background:var(--acid);}
     .film-plate {border:1px solid #455562;border-radius:21px;padding:36px;display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center;background:radial-gradient(ellipse at top right,#334751 0%,#111b24 65%);}
-    .film-art{min-height:245px;border:1px solid #5b6c72;border-radius:12px;position:relative;background:linear-gradient(135deg,rgba(215,253,112,.07),transparent 60%),repeating-linear-gradient(0deg,transparent 0,transparent 24px,rgba(255,255,255,.035) 25px);}
-    .film-art .tiny {position:absolute;top:20px;left:22px;font:800 11px var(--body);color:#b1c0c7;letter-spacing:.12em;}
-    .film-art .debug {position:absolute;left:25px;bottom:25px;font:700 15px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace;color:#c6e5d4;}
-    .film-art .debug b {color:var(--acid);}
-    .play {position:absolute;z-index:2;top:50%;left:50%;transform:translate(-50%,-50%);height:84px;width:84px;border-radius:50%;background:var(--acid);display:grid;place-items:center;color:var(--navy);font-size:30px;box-shadow:0 0 0 10px rgba(215,253,112,.11);}
+    .video-embed { position:relative; aspect-ratio:16 / 9; width:100%; border:1px solid #5b6c72; border-radius:12px; overflow:hidden; background:#071017; box-shadow:0 14px 34px rgba(0,0,0,.18); }
+    .video-embed iframe { position:absolute; inset:0; width:100%; height:100%; border:0; display:block; }
     .film-content .duration {color:var(--acid);font-size:12px;font-weight:840;letter-spacing:.14em;text-transform:uppercase;}
     .film-content h3{font:800 clamp(28px,3.3vw,46px)/1.07 var(--display);letter-spacing:-.065em;margin:15px 0;}
     .film-content p{color:#bbcad0;font-size:15px;margin-bottom:27px;}
@@ -197,7 +194,6 @@
       .section{padding:77px 0;}
       .exp-story{order:-1;}
       .film-plate{gap:25px;padding:22px;}
-      .film-art{min-height:240px;}
       .contact-section{padding:75px 0;}
     }
     @media(max-width:520px){
@@ -214,7 +210,6 @@
       .big-numbers{gap:9px;}
       .number-card{padding:16px;min-height:160px;}
       .number-card strong{font-size:43px;}
-      .film-art{min-height:225px;}
       .footer-inner{flex-direction:column;align-items:flex-start;}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*,*:before,*:after{transition:none!important;animation:none!important;}}
@@ -369,17 +364,21 @@
     <h2>A real project in three minutes.</h2>
     <p class="section-intro">This is an existing recorded product demonstration of MathGraph's Warranted Release Agent. It's not a personal introduction video; it shows the style of evidence-driven work I do.</p>
     <div class="film-plate">
-      <a class="film-art" href="https://youtu.be/1NgpOCCalIs" target="_blank" rel="noopener noreferrer" aria-label="Watch 2 minute 59 second MathGraph recorded demo on YouTube">
-        <span class="tiny">MATHGRAPH / RECORDED DEMONSTRATION</span>
-        <span class="play" aria-hidden="true">▶</span>
-        <span class="debug" aria-hidden="true"><span style="color:#8aa2a9">$</span> check release_candidate<br><b>✓</b> inspect exact source<br><b>✓</b> preserve evidence<br><b>?</b> keep unknowns explicit</span>
-      </a>
+      <div class="video-embed" id="video-player">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/1NgpOCCalIs?playsinline=1&amp;rel=0"
+          title="MathGraph Warranted Release Agent — 2-minute 59-second recorded demonstration"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+      </div>
       <div class="film-content">
         <span class="duration">02:59 · Product demonstration</span>
         <h3>Make the decision as inspectable as the result.</h3>
         <p>Watch how a release decision is tied to actual evidence, source identity, and the limits of what has been tested.</p>
-        <a class="btn lime" href="https://youtu.be/1NgpOCCalIs" target="_blank" rel="noopener noreferrer">Watch the real demo <span aria-hidden="true">↗</span></a>
-        <p class="film-notice">The recorded demonstration describes a specific project and its scoped tests; it is not a blanket proof of correctness.</p>
+        <p class="film-notice">Press play in the player beside this text. The video plays here, without opening another site.</p>
+        <p class="film-notice">The recording describes a specific project and its scoped tests; it is not a blanket proof of correctness.</p>
       </div>
     </div>
   </div>
