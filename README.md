@@ -26,6 +26,10 @@ The repository is named `heathsanchez.github.io`. To enable publication, visit *
 
 **Simplest alternative:** Tell ChatGPT the exact sentence to replace and the new wording; it can edit the linked repository.
 
-GitHub organization/repository-owner avatars are hotlinked for visual source identity, not endorsements. The leaderboard screenshots are intentionally not embedded. The 2:59 video is a product demonstration, not a personal introduction.
+GitHub organization/repository-owner avatars are hotlinked for visual source identity, not endorsements. The leaderboard screenshots are intentionally not embedded. The 2:59 video is the original, unmodified MP4 supplied by Heath, hosted locally as `mathgraph-demo.mp4` and played with native HTML5 controls. No video graphics or channel identifiers in the footage were edited or removed. The YouTube embedded player has been replaced to eliminate YouTube's channel badge.
 
 The historical commercial results are attributed to Heath's published account and not represented as independently audited. No affiliation or institutional endorsement is implied by open-source contributions.
+
+
+## Original video authenticity
+The original uploaded file is 12,420,182 bytes, SHA-256 `8d9648f9d1e1cbf9008e93239edf9da9ca77f4ac6c0072908a5a1873f24a30d0`. The transfer was reconstructed by [this one-time verification workflow](.github/workflows/assemble-original-video.yml) from temporary base64 chunks; the workflow verified the exact SHA-256, committed the MP4, and removed the temporary chunks. No logo removal, crop, watermark alteration, or transcoding was performed.
